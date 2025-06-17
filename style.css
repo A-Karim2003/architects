@@ -411,6 +411,8 @@ hr {
   overflow: hidden;
   box-shadow: 0 1rem 4rem rgb(0, 0, 0, 0.4);
   background-color: #000000;
+
+  transform-style: preserve-3d;
 }
 
 .card:hover img {

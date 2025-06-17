@@ -4,6 +4,7 @@ const menuItemsATag = document.querySelectorAll(".menu-item a");
 const sidebar = document.querySelector(".sidebar");
 const hamburgerMenu = document.querySelector(".menu-icon");
 const tooltip = document.querySelector(".tooltip");
+const tiltCards = document.querySelectorAll(".tilt-card");
 
 /*
 For each link, swap its text content by looping through its text content and wrap each character with a span and append it again to the link element
@@ -46,4 +47,16 @@ hamburgerMenu.addEventListener("mouseover", (e) => {
 hamburgerMenu.addEventListener("mouseleave", (e) => {
   const menu = e.target;
   tooltip.classList.remove("active");
+});
+
+//? Add card tilt feature
+
+tiltCards.forEach((card) => {
+  VanillaTilt.init(card, {
+    max: 15,
+    speed: 400,
+    glare: true,
+    "max-glare": 0.3,
+    perspective: 1000,
+  });
 });
