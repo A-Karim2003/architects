@@ -31,6 +31,7 @@ section {
   z-index: 3;
   transition: right 0.3s ease-in-out;
   cursor: pointer;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
 }
 
 header {
@@ -124,6 +125,26 @@ header img {
   text-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.2);
   box-shadow: 0 0.3rem 0.5rem rgba(0, 0, 0, 0.4);
   cursor: pointer;
+}
+
+@media (max-width: 870px) {
+  .banner {
+    padding: 4rem;
+    left: 0%;
+  }
+  .banner h1 {
+    font-size: 6rem;
+    width: 100%;
+  }
+
+  .banner p {
+    font-size: 3rem;
+  }
+
+  .banner button {
+    font-size: 2rem;
+    padding: 1rem;
+  }
 }
 
 /* ---------------Sidebar---------------- */
@@ -477,4 +498,167 @@ hr {
   color: #eee;
   border-radius: 0.3rem;
   box-shadow: 0 0.1rem 0.8rem rgba(0, 0, 0, 0.4);
+}
+
+/* --------------contact section------- */
+
+.contact {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #272727;
+}
+
+.contact-form-container {
+  max-width: 1440px;
+  width: 100%;
+  box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+}
+
+.form-container {
+  width: 100%;
+  min-height: 55rem;
+  display: flex;
+}
+
+.contact-img-container {
+  flex: 1;
+  background-color: #000000;
+}
+
+.contact-img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.5;
+}
+
+form {
+  flex: 2;
+  background-color: #eeeeee;
+  font-family: "Baloo Da 2", serif;
+  width: 100%;
+}
+
+form h1 {
+  font-size: 6rem;
+  font-weight: 300;
+  color: #272727;
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.form-group {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.form-group input,
+textarea {
+  border: none;
+  background-color: transparent;
+  border-bottom: dashed 2px #868686;
+  padding: 1.5rem;
+  font-size: 2rem;
+  outline: none;
+}
+
+/* When input is hovered  */
+.form-group input::placeholder,
+textarea::placeholder {
+  color: #888;
+  font-style: italic;
+  font-size: 2rem;
+  transform: translateX(-1rem);
+  transition: 0.3s ease;
+}
+
+.form-group input:focus::placeholder {
+  transform: translateY(-2rem);
+  font-size: 1rem;
+}
+
+textarea:focus::placeholder {
+  transform: translateY(-1rem);
+  font-size: 1rem;
+}
+
+form button {
+  width: 100%;
+  height: 5rem;
+  background-color: #c29525;
+  color: #fff;
+  border: none;
+  margin-top: 2rem;
+  font-family: "Muli", serif;
+  font-size: 2rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  cursor: pointer;
+  text-shadow: 0 0.1rem 0.3rem rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0.1rem 0.3rem rgba(0, 0, 0, 0.3);
+  transform: 0.4s;
+}
+
+form button:active {
+  transform: scale(0.98);
+}
+
+@media (max-width: 980px) {
+  .contact-img-container {
+    display: none;
+  }
+  form {
+    width: 100%;
+  }
+}
+
+/* --------------------Footer--------------------- */
+
+footer {
+  background-color: #17181b;
+  height: 10rem;
+  width: 100%;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+}
+
+.social-list {
+  font-size: 2rem;
+  color: #a7a7a7;
+  width: 30rem;
+  display: flex;
+  justify-content: space-around;
+  margin: auto;
+}
+
+.arrow-container {
+  position: fixed;
+  bottom: 3rem;
+  right: 3rem;
+  width: 4rem;
+  height: 4rem;
+  background-color: #c29525;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.5rem;
+
+  visibility: hidden;
+}
+
+.up-arrow {
+  font-size: 2.5rem;
+  color: white;
+}
+
+.arrow-container.visible {
+  visibility: visible;
 }

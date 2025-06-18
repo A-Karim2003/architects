@@ -60,3 +60,30 @@ tiltCards.forEach((card) => {
     perspective: 1000,
   });
 });
+
+// observer for the header
+const header = document.querySelector("header");
+const arrowContainer = document.querySelector(".arrow-container");
+
+// 2. Observer options
+const options = {
+  root: null,
+  threshold: 0.1,
+};
+
+// 3. Callback function
+const callback = (entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      arrowContainer.classList.remove("visible");
+    } else {
+      arrowContainer.classList.add("visible");
+    }
+  });
+};
+
+// 4. Create the observer
+const observer = new IntersectionObserver(callback, options);
+
+// 5. Observe each target
+observer.observe(header);
